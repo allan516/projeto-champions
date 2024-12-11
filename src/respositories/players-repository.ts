@@ -331,6 +331,6 @@ export const findPlayersById = async (
   id: number
 ): Promise<PlayerModel | undefined> => {
   return database.find((player) => {
-    player.id === id;
+    return player.id === id;
   });
 };

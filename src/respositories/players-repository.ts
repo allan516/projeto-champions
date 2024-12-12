@@ -334,3 +334,7 @@ export const findPlayersById = async (
     return player.id === id;
   });
 };
+
+export const insertPlayer = async (player: PlayerModel) => {
+  database.push(player);
+};

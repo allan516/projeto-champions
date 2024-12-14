@@ -10,5 +10,6 @@ router.delete("/players/:id", PlayerController.deletePlayer);
 router.patch("/players/:id", PlayerController.updatePlayer);
 
 router.get("/clubs", ClubController.getClubs);
+router.get("/clubs/:id", ClubController.getClubsById);
 
 export default router;

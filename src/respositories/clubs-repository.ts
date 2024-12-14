@@ -13,3 +13,9 @@ export const findAllClubs = async (): Promise<ClubModel[]> => {
   const clubs: ClubModel[] = JSON.parse(data);
   return clubs;
 };
+
+export const findClubById = async (id: number): Promise<ClubModel[]> => {
+  const data = await fs.readFile("./src/database/clubs.json", "utf-8");
+
+  return database;
+};

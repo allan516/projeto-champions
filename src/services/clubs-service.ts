@@ -7,3 +7,10 @@ export const getClubService = async () => {
 
   return response;
 };
+
+export const getClubsByIdService = async (id: number) => {
+  const data = await repository.findClubById(id);
+  const response = HttpResponse.ok(data);
+
+  return response;
+};

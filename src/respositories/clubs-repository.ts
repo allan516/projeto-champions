@@ -8,14 +8,8 @@ const database = [
   },
 ];
 
-export const findAllClubs = async (): Promise<ClubModel[]> => {
+export const findClubs = async (): Promise<ClubModel[]> => {
   const data = await fs.readFile("./src/database/clubs.json", "utf-8");
   const clubs: ClubModel[] = JSON.parse(data);
   return clubs;
-};
-
-export const findClubById = async (id: number): Promise<ClubModel[]> => {
-  const data = await fs.readFile("./src/database/clubs.json", "utf-8");
-
-  return database;
 };

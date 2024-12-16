@@ -10,9 +10,14 @@ export const getClubService = async () => {
 
 export const getClubsByIdService = async (id: number) => {
   const data = await repository.findClubs();
-  const dataClub = data[id - 1];
+  let response = null;
+  if (data[id - 1] !== undefined) {
+    const dataClub = data[id - 1];
 
-  const response = HttpResponse.ok(dataClub);
+    response = HttpResponse.ok(dataClub);
+  } else {
+    response = HttpResponse.badRequest();
+  }
 
   return response;
 };
